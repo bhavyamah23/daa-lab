@@ -11,14 +11,14 @@
 
 <br>
 
-# PYTHON PROGRAMMING LAB
+# DESIGN ANALYSIS AND ALGORITHM LAB
 
 ### LAB RECORD
 
 <br><br>
 
-**Student Name:** Priyanka Meena
-**Enrollment Number:** 250001
+**Student Name:** Bhavya Maheshwari
+**Enrollment Number:** 240029
 
 <br>
 
