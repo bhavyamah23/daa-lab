@@ -86,6 +86,11 @@ Lakshmangarh, Rajasthan
     <td>Merge Sort</td>
     <td><a href="#program-7-merge-sort">Program 7</a></td>
   </tr>
+  <tr>
+    <td>8</td>
+    <td>Insertion Sort</td>
+    <td><a href="#program-8-insertion-sort">Program 8</a></td>
+  </tr>
 </table>
 
 
@@ -362,3 +367,41 @@ Memory Used: 936 bytes
 
 [Back to Index](#index)
 
+# Program 8: Insertion Sort
+
+## Aim
+
+To write a Python program to sort the elements of an array using Insertion Sort.
+
+## Program
+
+```python
+import time
+import tracemalloc
+arr = [12, 11, 13, 5, 6, 8, 2]
+tracemalloc.start()
+start = time.perf_counter()
+for i in range(1, len(arr)):
+    key = arr[i]
+    j = i - 1
+    while j >= 0 and arr[j] > key:
+        arr[j+1] = arr[j]
+        j = j - 1
+    arr[j+1] = key
+end = time.perf_counter()
+current, peak = tracemalloc.get_traced_memory()
+tracemalloc.stop()
+print("Sorted Array:", arr)
+print("Execution Time:", end-start, "seconds")
+print("Memory Used:", peak, "bytes")
+```
+
+## Sample Output
+
+```text
+Sorted Array: [2, 5, 6, 8, 11, 12, 13]
+Execution Time: 4.130000888835639e-05 seconds
+Memory Used: 800 bytes
+```
+
+[Back to Index](#index)
