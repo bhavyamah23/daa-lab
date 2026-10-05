@@ -91,6 +91,11 @@ Lakshmangarh, Rajasthan
     <td>Insertion Sort</td>
     <td><a href="#program-8-insertion-sort">Program 8</a></td>
   </tr>
+  <tr>
+    <td>9</td>
+    <td>Selection Sort</td>
+    <td><a href="#program-9-selection-sort">Program 9</a></td>
+  </tr>
 </table>
 
 
@@ -402,6 +407,45 @@ print("Memory Used:", peak, "bytes")
 Sorted Array: [2, 5, 6, 8, 11, 12, 13]
 Execution Time: 4.130000888835639e-05 seconds
 Memory Used: 800 bytes
+```
+
+[Back to Index](#index)
+
+# Program 9: Selection Sort
+
+## Aim
+
+To write a Python program to sort the elements of an array using Selection Sort.
+
+## Program
+
+```python
+import time
+import tracemalloc
+arr = [64, 25, 12, 22, 11, 90, 34]
+tracemalloc.start()
+start = time.perf_counter()
+n = len(arr)
+for i in range(n):
+    min_index = i
+    for j in range(i+1, n):
+        if arr[j] < arr[min_index]:
+            min_index = j
+    arr[i], arr[min_index] = arr[min_index], arr[i]
+end = time.perf_counter()
+current, peak = tracemalloc.get_traced_memory()
+tracemalloc.stop()
+print("Sorted Array:", arr)
+print("Execution Time:", end-start, "seconds")
+print("Memory Used:", peak, "bytes")
+```
+
+## Sample Output
+
+```text
+Sorted Array: [11, 12, 22, 25, 34, 64, 90]
+Execution Time: 8.510000770911574e-05 seconds
+Memory Used: 880 bytes
 ```
 
 [Back to Index](#index)
