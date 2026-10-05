@@ -76,6 +76,11 @@ Lakshmangarh, Rajasthan
     <td>Fibonacci Series</td>
     <td><a href="#program-5-fibonacci-series">Program 5</a></td>
   </tr>
+  <tr>
+    <td>6</td>
+    <td>Bubble Sort</td>
+    <td><a href="#program-6-bubble-sort">Program 6</a></td>
+  </tr>
 </table>
 
 
@@ -254,9 +259,41 @@ Enter number of terms: 7
 
 ---
 
-Example:
+<div style="page-break-after: always;"></div>
+
+# Program 6: Bubble Sort
+
+## Aim
+
+To write a Python program to sort the elements of an array using Bubble Sort.
+
+## Program
 
 ```python
-class Student:
-    def display(self):
-        print("Hello")
+import time
+import tracemalloc
+arr = [64, 34, 25, 12, 22, 11, 90]
+tracemalloc.start()
+start = time.perf_counter()
+n = len(arr)
+for i in range(n):
+    for j in range(0, n-i-1):
+        if arr[j] > arr[j+1]:
+            arr[j], arr[j+1] = arr[j+1], arr[j]
+end = time.perf_counter()
+current, peak = tracemalloc.get_traced_memory()
+tracemalloc.stop()
+print("Sorted Array:", arr)
+print("Execution Time:", end-start, "seconds")
+print("Memory Used:", peak, "bytes")
+```
+
+## Sample Output
+
+```text
+Sorted Array: [11, 12, 22, 25, 34, 64, 90]
+Execution Time: 0.0019899999897461385 seconds
+Memory Used: 880 bytes
+```
+
+[Back to Index](#index)
