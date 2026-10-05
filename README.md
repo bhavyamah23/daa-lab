@@ -101,6 +101,11 @@ Lakshmangarh, Rajasthan
     <td>Quick Sort</td>
     <td><a href="#program-10-quick-sort">Program 10</a></td>
   </tr>
+  <tr>
+    <td>11</td>
+    <td>Linear Search</td>
+    <td><a href="#program-11-linear-search">Program 11</a></td>
+  </tr>
 </table>
 
 
@@ -492,6 +497,55 @@ print("Memory Used:", peak, "bytes")
 Sorted Array: [1, 5, 7, 8, 9, 10, 12]
 Execution Time: 0.00010119999933522195 seconds
 Memory Used: 1496 bytes
+```
+
+[Back to Index](#index)
+
+# Program 11: Linear Search
+
+## Aim
+
+To write a Python program to search for an element in an array using Linear Search and analyze its execution time and memory usage.
+
+## Program
+
+```python
+import time
+import sys
+n = int(input("Enter number of elements: "))
+arr = []
+for i in range(n):
+    arr.append(int(input("Enter element: ")))
+key = int(input("Enter element to search: "))
+start = time.perf_counter()
+found = -1
+for i in range(n):
+    if arr[i] == key:
+        found = i
+        break
+end = time.perf_counter()
+if found != -1:
+    print("Element found at index:", found)
+else:
+    print("Element not found")
+execution_time = end - start
+memory_used = sys.getsizeof(arr)
+print("Execution Time =", execution_time, "seconds")
+print("Memory Used =", memory_used, "bytes")
+```
+
+## Sample Output
+
+```text
+Enter number of elements: 4
+Enter element: 5
+Enter element: 7
+Enter element: 2
+Enter element: 7
+Enter element to search: 2
+Element found at index: 2
+Execution Time = 6.400005077011883e-06 seconds
+Memory Used = 88 bytes
 ```
 
 [Back to Index](#index)
