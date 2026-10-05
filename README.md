@@ -96,6 +96,11 @@ Lakshmangarh, Rajasthan
     <td>Selection Sort</td>
     <td><a href="#program-9-selection-sort">Program 9</a></td>
   </tr>
+  <tr>
+  <td>10</td>
+    <td>Quick Sort</td>
+    <td><a href="#program-10-quick-sort">Program 10</a></td>
+  </tr>
 </table>
 
 
@@ -446,6 +451,47 @@ print("Memory Used:", peak, "bytes")
 Sorted Array: [11, 12, 22, 25, 34, 64, 90]
 Execution Time: 8.510000770911574e-05 seconds
 Memory Used: 880 bytes
+```
+
+[Back to Index](#index)
+
+# Program 10: Quick Sort
+
+## Aim
+
+To write a Python program to sort the elements of an array using Quick Sort.
+
+## Program
+
+```python
+import time
+import tracemalloc
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr)//2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quick_sort(left) + middle + quick_sort(right)
+arr = [10, 7, 8, 9, 1, 5, 12]
+tracemalloc.start()
+start = time.perf_counter()
+arr = quick_sort(arr)
+end = time.perf_counter()
+current, peak = tracemalloc.get_traced_memory()
+tracemalloc.stop()
+print("Sorted Array:", arr)
+print("Execution Time:", end-start, "seconds")
+print("Memory Used:", peak, "bytes")
+```
+
+## Sample Output
+
+```text
+Sorted Array: [1, 5, 7, 8, 9, 10, 12]
+Execution Time: 0.00010119999933522195 seconds
+Memory Used: 1496 bytes
 ```
 
 [Back to Index](#index)
