@@ -106,6 +106,11 @@ Lakshmangarh, Rajasthan
     <td>Linear Search</td>
     <td><a href="#program-11-linear-search">Program 11</a></td>
   </tr>
+  <tr>
+    <td>12</td>
+    <td>Binary Search</td>
+    <td><a href="#program-12-Binary-search">Program 12</a></td>
+  </tr>
 </table>
 
 
@@ -511,12 +516,13 @@ To write a Python program to search for an element in an array using Linear Sear
 
 ```python
 import time
-import sys
+import tracemalloc
 n = int(input("Enter number of elements: "))
 arr = []
 for i in range(n):
     arr.append(int(input("Enter element: ")))
 key = int(input("Enter element to search: "))
+tracemalloc.start()
 start = time.perf_counter()
 found = -1
 for i in range(n):
@@ -524,13 +530,75 @@ for i in range(n):
         found = i
         break
 end = time.perf_counter()
+current, peak = tracemalloc.get_traced_memory()
+tracemalloc.stop()
 if found != -1:
     print("Element found at index:", found)
 else:
     print("Element not found")
-execution_time = end - start
-memory_used = sys.getsizeof(arr)
-print("Execution Time =", execution_time, "seconds")
+print("Execution Time =", end - start, "seconds")
+print("Memory Used =", peak, "bytes")
+```
+
+## Sample Output
+
+```text
+Enter number of elements: 4
+Enter element: 6
+Enter element: 2
+Enter element: 3
+Enter element: 5
+Enter element to search: 5
+Element found at index: 3
+Execution Time = 5.529999907594174e-05 seconds
+Memory Used = 80 bytes
+```
+
+[Back to Index](#index)
+
+# Program 12: Binary Search
+
+## Aim
+
+To write a Python program to implement Binary Search for finding a given element in a sorted array and calculate its execution time and memory used.
+
+## Program
+
+```python
+import time
+import sys
+n = int(input("Enter number of elements: "))
+arr = []
+for i in range(n):
+    arr.append(int(input("Enter element: ")))
+# Sort the array
+arr.sort()
+key = int(input("Enter element to search: "))
+# Start execution time
+start = time.perf_counter()
+low = 0
+high = n - 1
+found = -1
+# Binary Search
+while low <= high:
+    mid = (low + high) // 2
+    if arr[mid] == key:
+        found = mid
+        break
+    elif arr[mid] < key:
+        low = mid + 1
+    else:
+        high = mid - 1
+# End execution time
+end = time.perf_counter()
+print("Sorted Array =", arr)
+if found != -1:
+    print("Element found at position:", found + 1)
+else:
+    print("Element not found")
+print("Execution Time =", end - start, "seconds")
+# Memory used by array
+memory_used = sys.getsizeof(arr) + sum(sys.getsizeof(x) for x in arr)
 print("Memory Used =", memory_used, "bytes")
 ```
 
@@ -538,14 +606,15 @@ print("Memory Used =", memory_used, "bytes")
 
 ```text
 Enter number of elements: 4
-Enter element: 5
 Enter element: 7
+Enter element: 4
+Enter element: 8
 Enter element: 2
-Enter element: 7
-Enter element to search: 2
-Element found at index: 2
-Execution Time = 6.400005077011883e-06 seconds
-Memory Used = 88 bytes
+Enter element to search: 8
+Sorted Array = [2, 4, 7, 8]
+Element found at position: 4
+Execution Time = 4.4000043999403715e-06 seconds
+Memory Used = 200 bytes
 ```
 
 [Back to Index](#index)
