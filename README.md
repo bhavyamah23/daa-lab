@@ -924,7 +924,9 @@ Peak Memory: 3993048 bytes
 ==============================================
        ALL COMPLEXITIES EXECUTED SUCCESSFULLY
 ==============================================
-<img src="1.jpg" alt="Comparison of Time Complexities" width="700">
+
+<img width="927" height="567" alt="1" src="https://github.com/user-attachments/assets/d43dc3a7-aeb1-475e-be9f-a5e3cdfedf39" />
+
 
 ```
 
