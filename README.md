@@ -81,6 +81,11 @@ Lakshmangarh, Rajasthan
     <td>Bubble Sort</td>
     <td><a href="#program-6-bubble-sort">Program 6</a></td>
   </tr>
+  <tr>
+    <td>7</td>
+    <td>Merge Sort</td>
+    <td><a href="#program-7-merge-sort">Program 7</a></td>
+  </tr>
 </table>
 
 
@@ -297,3 +302,63 @@ Memory Used: 880 bytes
 ```
 
 [Back to Index](#index)
+
+# Program 7: Merge Sort
+
+## Aim
+
+To write a Python program to sort the elements of an array using Merge Sort.
+
+## Program
+
+```python
+import time
+import tracemalloc
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left = arr[:mid]
+        right = arr[mid:]
+        merge_sort(left)
+        merge_sort(right)
+        i = 0
+        j = 0
+        k = 0
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                arr[k] = left[i]
+                i += 1
+            else:
+                arr[k] = right[j]
+                j += 1
+            k += 1
+        while i < len(left):
+            arr[k] = left[i]
+            i += 1
+            k += 1
+        while j < len(right):
+            arr[k] = right[j]
+            j += 1
+            k += 1
+arr = [38, 27, 43, 3, 9, 82, 10]
+tracemalloc.start()
+start = time.perf_counter()
+merge_sort(arr)
+end = time.perf_counter()
+current, peak = tracemalloc.get_traced_memory()
+tracemalloc.stop()
+print("Sorted Array:", arr)
+print("Execution Time:", end-start, "seconds")
+print("Memory Used:", peak, "bytes")
+```
+
+## Sample Output
+
+```text
+Sorted Array: [3, 9, 10, 27, 38, 43, 82]
+Execution Time: 0.012692500007688068 seconds
+Memory Used: 936 bytes
+```
+
+[Back to Index](#index)
+
