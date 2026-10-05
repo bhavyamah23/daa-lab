@@ -925,9 +925,7 @@ Peak Memory: 3993048 bytes
        ALL COMPLEXITIES EXECUTED SUCCESSFULLY
 ==============================================
 
-<img width="927" height="567" alt="1" src="https://github.com/user-attachments/assets/d43dc3a7-aeb1-475e-be9f-a5e3cdfedf39" />
-
-
 ```
+<img width="927" height="567" alt="1" src="https://github.com/user-attachments/assets/72161281-a154-4f7a-9200-7a7a899b559b" />
 
 [Back to Index](#index)
