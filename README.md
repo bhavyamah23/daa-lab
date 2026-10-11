@@ -927,3 +927,32 @@ Peak Memory: 3993048 bytes
 <img width="927" height="567" alt="1" src="https://github.com/user-attachments/assets/72161281-a154-4f7a-9200-7a7a899b559b" />
 
 [Back to Index](#index)
+
+# Program 14: Mathematical Functions in Python
+
+## Aim
+
+To write a Python program to calculate the square root, square, ceiling, and floor of a given number using the math module.
+
+## Program
+
+```python
+import math
+n = float(input("Enter a number: "))
+print("Square root:", math.sqrt(n))
+print("Square:", math.pow(n, 2))
+print("Ceiling:", math.ceil(n))
+print("Floor:", math.floor(n))
+```
+
+## Sample Output
+
+```text
+Enter a number: 2.2
+Square root: 1.4832396974191326
+Square: 4.840000000000001
+Ceiling: 3
+Floor: 2
+```
+
+[Back to Index](#index)
