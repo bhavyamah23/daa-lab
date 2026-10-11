@@ -129,6 +129,16 @@ Lakshmangarh, Rajasthan
     <td>Undirected Graph</td>
     <td><a href="#program-15-Undirected-Graph">Program 16</a></td>
   </tr>
+  <tr>
+    <td>17</td>
+    <td>weighted Graph</td>
+    <td><a href="#program-17-weighted-Graph">Program 17</a></td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>Directed weighted Graph</td>
+    <td><a href="#program-18-Directed-weighted-Graph">Program 18</a></td>
+  </tr>
 </table>
 
 
@@ -1083,6 +1093,131 @@ A -> B C D
 B -> A D 
 C -> A D 
 D -> B C A 
+```
+
+[Back to Index](#index)
+
+# Program 17: Weighted Graph
+
+## Aim
+
+To implement a weighted graph using Python.
+
+## Program
+
+```python
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+
+class Graph:
+    def __init__(self):
+        self.nodes = []
+
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+
+    def add_edge(self, node1, node2, weight):
+        node1.neighbors.append((node2, weight))
+        node2.neighbors.append((node1, weight))
+
+    def print_graph(self):
+        for node in self.nodes:
+            print(node.data, "->", end=" ")
+            for neighbor, weight in node.neighbors:
+                print(f"({neighbor.data}, {weight})", end=" ")
+            print()
+
+g = Graph()
+
+A = g.add_node("A")
+B = g.add_node("B")
+C = g.add_node("C")
+D = g.add_node("D")
+
+g.add_edge(A, B, 10)
+g.add_edge(A, C, 20)
+g.add_edge(B, D, 30)
+g.add_edge(C, D, 40)
+g.add_edge(D, A, 50)
+
+g.print_graph()
+
+```
+
+## Sample Output
+
+```text
+ A -> (B, 10) (C, 20) (D, 50) 
+B -> (A, 10) (D, 30) 
+C -> (A, 20) (D, 40) 
+D -> (B, 30) (C, 40) (A, 50)
+```
+
+[Back to Index](#index)
+
+# Program 18: Directed weighted Graph
+
+## Aim
+
+To implement a directed weighted graph using Python.
+
+## Program
+
+```python
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+
+class Graph:
+    def __init__(self):
+        self.nodes = []
+
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+
+    def add_edge(self, node1, node2, weight):
+        node1.neighbors.append((node2, weight))
+
+    def print_graph(self):
+        for node in self.nodes:
+            print(node.data, "->", end=" ")
+            for neighbor, weight in node.neighbors:
+                print(f"({neighbor.data}, {weight})", end=" ")
+            print()
+
+g = Graph()
+
+A = g.add_node("A")
+B = g.add_node("B")
+C = g.add_node("C")
+D = g.add_node("D")
+
+g.add_edge(A, B, 10)
+g.add_edge(A, C, 20)
+g.add_edge(B, D, 30)
+g.add_edge(C, D, 40)
+g.add_edge(D, A, 50)
+
+g.print_graph()
+
+```
+
+## Sample Output
+
+```text
+A -> (B, 10) (C, 20) 
+B -> (D, 30) 
+C -> (D, 40) 
+D -> (A, 50) 
 ```
 
 [Back to Index](#index)
