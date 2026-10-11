@@ -119,6 +119,16 @@ Lakshmangarh, Rajasthan
     <td>Mathematical Functions in Python</td>
     <td><a href="#program-14-Mathematical-Functions-in-Python">Program 14</a></td>
   </tr>
+  <tr>
+    <td>15</td>
+    <td>Directed Graph</td>
+    <td><a href="#program-15-Directed-Graph">Program 15</a></td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>Undirected Graph</td>
+    <td><a href="#program-15-Undirected-Graph">Program 16</a></td>
+  </tr>
 </table>
 
 
@@ -958,6 +968,121 @@ Square root: 1.4832396974191326
 Square: 4.840000000000001
 Ceiling: 3
 Floor: 2
+```
+
+[Back to Index](#index)
+
+# Program 15: Directed Graph
+
+## Aim
+
+To implement a directed graph using Python.
+
+## Program
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+class Graph:
+    def __init__(self):
+        self.nodes = []
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+    def add_edge(self, node1, node2):
+        node1.neighbors.append(node2)
+    def print_graph(self):
+        for node in self.nodes:
+            print(node.data, "->", end=" ")
+            for neighbor in node.neighbors:
+                print(neighbor.data, end=" ")
+            print()
+g = Graph()
+A = g.add_node("A")
+B = g.add_node("B")
+C = g.add_node("C")
+D = g.add_node("D")
+g.add_edge(A, B)
+g.add_edge(A, C)
+g.add_edge(B, D)
+g.add_edge(C, D)
+g.add_edge(D, A)
+g.print_graph()
+```
+
+## Sample Output
+
+```text
+A -> B C 
+B -> D 
+C -> D 
+D -> A 
+```
+
+[Back to Index](#index)
+
+# Program 16: Undirected Graph
+
+## Aim
+
+To implement an undirected graph using Python.
+
+## Program
+
+```python
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+
+class Graph:
+    def __init__(self):
+        self.nodes = []
+
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+
+    def add_edge(self, node1, node2):
+        node1.neighbors.append(node2)
+        node2.neighbors.append(node1)
+
+    def print_graph(self):
+        for node in self.nodes:
+            print(node.data, "->", end=" ")
+            for neighbor in node.neighbors:
+                print(neighbor.data, end=" ")
+            print()
+
+g = Graph()
+
+A = g.add_node("A")
+B = g.add_node("B")
+C = g.add_node("C")
+D = g.add_node("D")
+
+g.add_edge(A, B)
+g.add_edge(A, C)
+g.add_edge(B, D)
+g.add_edge(C, D)
+g.add_edge(D, A)
+
+g.print_graph()
+
+```
+
+## Sample Output
+
+```text
+A -> B C D 
+B -> A D 
+C -> A D 
+D -> B C A 
 ```
 
 [Back to Index](#index)
