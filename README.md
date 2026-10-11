@@ -114,6 +114,11 @@ Lakshmangarh, Rajasthan
     <td>Different Time Complexities, Execution Time and Memory Usage</td>
     <td><a href="#program-13-demonstration-of-different-time-complexities">Program 13</a></td>
   </tr>
+  <tr>
+    <td>14</td>
+    <td>Mathematical Functions in Python</td>
+    <td><a href="#program-14-Mathematical-Functions-in-Python">Program 14</a></td>
+  </tr>
 </table>
 
 
