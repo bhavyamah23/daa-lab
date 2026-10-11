@@ -127,12 +127,12 @@ Lakshmangarh, Rajasthan
   <tr>
     <td>16</td>
     <td>Undirected Graph</td>
-    <td><a href="#program-15-Undirected-Graph">Program 16</a></td>
+    <td><a href="#program-16-Undirected-Graph">Program 16</a></td>
   </tr>
   <tr>
     <td>17</td>
     <td>weighted Graph</td>
-    <td><a href="#program-17-weighted-Graph">Program 17</a></td>
+    <td><a href="#program-17-Weighted-Graph">Program 17</a></td>
   </tr>
   <tr>
     <td>18</td>
