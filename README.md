@@ -38,8 +38,6 @@ Lakshmangarh, Rajasthan
 
 # INDEX
 
-# INDEX
-
 <table style="width:100%; border-collapse:collapse;">
   <tr>
     <th style="width:10%;">S. No.</th>
