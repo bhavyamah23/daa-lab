@@ -139,6 +139,11 @@ Lakshmangarh, Rajasthan
     <td>Directed weighted Graph</td>
     <td><a href="#program-18-Directed-weighted-Graph">Program 18</a></td>
   </tr>
+  <tr>
+    <td>19</td>
+    <td>Plotting a Simple Line Graph Using Python</td>
+    <td><a href="#program-19-Plotting-a-Simple-Line-Graph-Using-Python">Program 19</a></td>
+  </tr>
 </table>
 
 
@@ -1219,5 +1224,30 @@ B -> (D, 30)
 C -> (D, 40) 
 D -> (A, 50) 
 ```
+
+[Back to Index](#index)
+
+# Program 19: Plotting a Simple Line Graph Using Python
+
+## Aim
+
+To write a Python program to plot a simple line graph using Matplotlib.
+
+## Program
+
+```python
+import matplotlib.pyplot as plt
+x = [1, 2, 3, 4, 5]
+y = [10, 20, 15, 30, 25]
+plt.plot(x, y)
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.title("Simple Line Graph")
+plt.show()
+```
+
+## Sample Output
+
+<img width="601" height="459" alt="image" src="https://github.com/user-attachments/assets/5e168148-e6a7-4a97-8e8b-605a7b9b7c65" />
 
 [Back to Index](#index)
