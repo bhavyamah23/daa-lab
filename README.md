@@ -1,5 +1,5 @@
 <div align="center">
-
+  
 # MODY UNIVERSITY OF SCIENCE AND TECHNOLOGY
 
 ## School of Engineering and Technology
@@ -50,25 +50,21 @@ Lakshmangarh, Rajasthan
     <td>Addition of Two Numbers</td>
     <td><a href="#program-1-addition-of-two-numbers">Program 1</a></td>
   </tr>
-
   <tr>
     <td>2</td>
     <td>Largest of Three Numbers</td>
     <td><a href="#program-2-largest-of-three-numbers">Program 2</a></td>
   </tr>
-
   <tr>
     <td>3</td>
     <td>Factorial of a Number</td>
     <td><a href="#program-3-factorial-of-a-number">Program 3</a></td>
   </tr>
-
   <tr>
     <td>4</td>
     <td>Prime Number Check</td>
     <td><a href="#program-4-prime-number-check">Program 4</a></td>
   </tr>
-
   <tr>
     <td>5</td>
     <td>Fibonacci Series</td>
@@ -95,7 +91,7 @@ Lakshmangarh, Rajasthan
     <td><a href="#program-9-selection-sort">Program 9</a></td>
   </tr>
   <tr>
-  <td>10</td>
+    <td>10</td>
     <td>Quick Sort</td>
     <td><a href="#program-10-quick-sort">Program 10</a></td>
   </tr>
@@ -107,7 +103,7 @@ Lakshmangarh, Rajasthan
   <tr>
     <td>12</td>
     <td>Binary Search</td>
-    <td><a href="#program-12-Binary-search">Program 12</a></td>
+    <td><a href="#program-12-binary-search">Program 12</a></td>
   </tr>
   <tr>
     <td>13</td>
@@ -117,42 +113,42 @@ Lakshmangarh, Rajasthan
   <tr>
     <td>14</td>
     <td>Mathematical Functions in Python</td>
-    <td><a href="#program-14-Mathematical-Functions-in-Python">Program 14</a></td>
+    <td><a href="#program-14-mathematical-functions-in-python">Program 14</a></td>
   </tr>
   <tr>
     <td>15</td>
     <td>Directed Graph</td>
-    <td><a href="#program-15-Directed-Graph">Program 15</a></td>
+    <td><a href="#program-15-directed-graph">Program 15</a></td>
   </tr>
   <tr>
     <td>16</td>
     <td>Undirected Graph</td>
-    <td><a href="#program-16-Undirected-Graph">Program 16</a></td>
+    <td><a href="#program-16-undirected-graph">Program 16</a></td>
   </tr>
   <tr>
     <td>17</td>
-    <td>weighted Graph</td>
-    <td><a href="#program-17-Weighted-Graph">Program 17</a></td>
+    <td>Weighted Graph</td>
+    <td><a href="#program-17-weighted-graph">Program 17</a></td>
   </tr>
   <tr>
     <td>18</td>
-    <td>Directed weighted Graph</td>
-    <td><a href="#program-18-Directed-weighted-Graph">Program 18</a></td>
+    <td>Directed Weighted Graph</td>
+    <td><a href="#program-18-directed-weighted-graph">Program 18</a></td>
   </tr>
   <tr>
     <td>19</td>
     <td>Plotting a Simple Line Graph Using Python</td>
-    <td><a href="#program-19-Plotting-a-Simple-Line-Graph-Using-Python">Program 19</a></td>
+    <td><a href="#program-19-plotting-a-simple-line-graph-using-python">Program 19</a></td>
   </tr>
   <tr>
     <td>20</td>
     <td>Comparison of Time Complexities of Dijkstra’s and Bellman–Ford Algorithms</td>
-    <td><a href="#program-20-Comparison-of-Time-Complexities-of-Dijkstra’s-and-Bellman–Ford-Algorithms">Program 20</a></td>
+    <td><a href="#program-20-comparison-of-time-complexities-of-dijkstras-and-bellman-ford-algorithms">Program 20</a></td>
   </tr>
   <tr>
     <td>21</td>
     <td>Comparison of Time Complexities of Prim’s and Kruskal’s Algorithms</td>
-    <td><a href="#program-21-Comparison-of-Time-Complexities-of-Prim’s-and-Kruskal’s-Algorithms">Program 21</a></td>
+    <td><a href="#program-21-comparison-of-time-complexities-of-prims-and-kruskals-algorithms">Program 21</a></td>
   </tr>
 </table>
 
