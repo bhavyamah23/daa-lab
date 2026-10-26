@@ -142,8 +142,8 @@ Lakshmangarh, Rajasthan
   </tr>
   <tr>
   <td>20</td>
-  <td>Comparison of Time Complexities of Dijkstra's and Bellman-Ford Algorithms</td>
-  <td><a href="#program20">Program 20</a></td>
+  <td>Comparison of Time Complexities of Dijkstra’s and BellmanFord Algorithms</td>
+  <td><a href="#program-20-Comparison-of-Time-Complexities-of-Dijkstra’s-and-BellmanFord-Algorithms">Program 20</a></td>
   </tr>
   <tr>
     <td>21</td>
@@ -1258,11 +1258,11 @@ plt.show()
 
 [Back to Index](#index)
 
-# Program 20: Comparison of Time Complexities of Dijkstra’s and Bellman–Ford Algorithms
+# Program 20: Comparison of Time Complexities of Dijkstra’s and BellmanFord Algorithms
 
 ## Aim
 
-To write a Python program to plot a graph comparing the theoretical time complexities of Dijkstra’s and Bellman–Ford algorithms using Matplotlib.
+To write a Python program to plot a graph comparing the theoretical time complexities of Dijkstra’s and BellmanFord algorithms using Matplotlib.
 
 
 ## Program
