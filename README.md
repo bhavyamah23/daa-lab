@@ -143,7 +143,7 @@ Lakshmangarh, Rajasthan
   <tr>
     <td>20</td>
     <td>Comparison of Time Complexities of Dijkstra’s and BellmanFord Algorithms</td>
-    <td><a href="#program-20-comparison-of-time-complexities-of-dijkstra’s-and-bellmanFord-algorithms">Program 20</a></td>
+    <td><a href="#program-20-comparison-of-time-complexities-of-dijkstra’s-and-bellmanford-algorithms">Program 20</a></td>
   </tr>
   <tr>
     <td>21</td>
