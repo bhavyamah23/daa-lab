@@ -1305,6 +1305,7 @@ plt.show()
 # Program 21: Comparison of Time Complexities of Prim’s and Kruskal’s Algorithms
 
 ## Aim
+
 To write a Python program to plot a graph comparing the theoretical time complexities of Prim’s and Kruskal’s algorithms using Matplotlib.
 
 ## Program
@@ -1342,6 +1343,5 @@ plt.show()
 ## Sample Output
 
 <img width="636" height="479" alt="image" src="https://github.com/user-attachments/assets/a6c85f58-417d-499e-acdd-c4712c65b4ed" />
-
 
 [Back to Index](#index)
