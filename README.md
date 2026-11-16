@@ -152,8 +152,8 @@ Lakshmangarh, Rajasthan
   </tr>
   <tr>
     <td>22</td>
-    <td>Write a Python program to solve the Knapsack Problem using the Greedy Method.</td>
-    <td><a href="#program-22-Write-a-Python-program-to-solve-the-Knapsack-Problem-using-the-Greedy-Method.">Program 22</a></td>
+    <td>Greedy Knapsack</td>
+    <td><a href="#program-22-Greedy-Knapsack">Program 22</a></td>
   </tr>
 </table>
 
@@ -1352,7 +1352,7 @@ plt.show()
 
 [Back to Index](#index)
 
-# program 22: Write a Python program to solve the Knapsack Problem using the Greedy Method.
+# program 22: Greedy Knapsack
 
 ## Aim
 
