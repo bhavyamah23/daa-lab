@@ -155,6 +155,11 @@ Lakshmangarh, Rajasthan
     <td>Greedy Knapsack</td>
     <td><a href="#program-22-Greedy-Knapsack">Program 22</a></td>
   </tr>
+  <tr>
+    <td>23</td>
+    <td>Fractional Knapsack</td>
+    <td><a href="#program-22-Fractional-Knapsack">Program 23</a></td>
+  </tr>
 </table>
 
 
@@ -1395,5 +1400,83 @@ def greedy_knapsack(weights, profits, capacity):
 ## Sample Output 
 
 <img width="511" height="431" alt="image" src="https://github.com/user-attachments/assets/aa968b83-c0dd-476f-81e9-bf591f74079b" />
+
+[Back to Index](#index)
+
+# program 23: Fractional Knapsack
+
+## Aim
+
+To implement the Fractional Knapsack Algorithm using Python and maximize the total profit within the given knapsack capacity.
+
+## Program
+
+```python
+
+def fractional_knapsack(weights, profits, capacity):
+    items = []
+
+    for i in range(len(weights)):
+        ratio = profits[i] / weights[i]
+        items.append((ratio, weights[i], profits[i], i + 1))
+
+    # Sort items by decreasing ratio
+    items.sort(reverse=True)
+
+    total_profit = 0
+    total_weight = 0
+
+    print("Selected Items:")
+
+    for ratio, weight, profit, item_no in items:
+
+        if capacity >= weight:
+            # Take complete item
+            capacity -= weight
+            total_weight += weight
+            total_profit += profit
+
+            print("Item:", item_no,
+                  "Fraction:", 1,
+                  "Weight:", weight,
+                  "Profit:", profit)
+
+        else:
+            # Take fraction of item
+            fraction = capacity / weight
+
+            total_profit += profit * fraction
+            total_weight += capacity
+
+            print("Item:", item_no,
+                  "Fraction:", round(fraction, 2),
+                  "Weight:", capacity,
+                  "Profit:", round(profit * fraction, 2))
+
+            capacity = 0
+            break
+
+    print("\nTotal Weight:", total_weight)
+    print("Total Profit:", total_profit)
+
+
+# Main Program
+n = int(input("Enter number of items: "))
+
+weights = []
+profits = []
+
+for i in range(n):
+    weights.append(float(input("Enter weight: ")))
+    profits.append(float(input("Enter profit: ")))
+
+capacity = float(input("Enter knapsack capacity: "))
+
+fractional_knapsack(weights, profits, capacity)
+```
+
+## Sample Output 
+
+<img width="839" height="429" alt="image" src="https://github.com/user-attachments/assets/17491621-636a-4ce1-881e-896c2d7141dd" />
 
 [Back to Index](#index)
