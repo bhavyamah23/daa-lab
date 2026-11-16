@@ -158,7 +158,7 @@ Lakshmangarh, Rajasthan
   <tr>
     <td>23</td>
     <td>Fractional Knapsack</td>
-    <td><a href="#program-22-Fractional-Knapsack">Program 23</a></td>
+    <td><a href="#program-23-Fractional-Knapsack">Program 23</a></td>
   </tr>
 </table>
 
