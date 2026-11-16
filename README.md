@@ -150,6 +150,11 @@ Lakshmangarh, Rajasthan
     <td>Comparison of Time Complexities of Prim’s and Kruskal’s Algorithms</td>
     <td><a href="#program-21-comparison-of-time-complexities-of-prims-and-kruskals-algorithms">Program 21</a></td>
   </tr>
+  <tr>
+    <td>22</td>
+    <td>Write a Python program to solve the Knapsack Problem using the Greedy Method.</td>
+    <td><a href="#program-22-Write-a-Python-program-to-solve-the-Knapsack-Problem-using-the-Greedy-Method.">Program 22</a></td>
+  </tr>
 </table>
 
 
@@ -1344,5 +1349,51 @@ plt.show()
 ## Sample Output
 
 <img width="636" height="479" alt="image" src="https://github.com/user-attachments/assets/a6c85f58-417d-499e-acdd-c4712c65b4ed" />
+
+[Back to Index](#index)
+
+# program 22: Write a Python program to solve the Knapsack Problem using the Greedy Method.
+
+## Aim
+
+To implement the Greedy Knapsack Algorithm using Python and maximize the total profit within the given knapsack capacity.
+
+## Program
+
+```python
+def greedy_knapsack(weights, profits, capacity):
+    n = len(weights)
+
+    # Calculate profit/weight ratio
+    items = []
+
+    for i in range(n):
+        ratio = profits[i] / weights[i]
+        items.append((ratio, weights[i], profits[i], i + 1))
+
+    # Sort by decreasing ratio
+    items.sort(reverse=True)
+
+    total_profit = 0
+    total_weight = 0
+
+    print("\nSelected Items:")
+
+    for ratio, weight, profit, item_no in items:
+        if total_weight + weight <= capacity:
+            total_weight += weight
+            total_profit += profit
+
+            print("Item:", item_no,
+                  "Weight:", weight,
+                  "Profit:", profit)
+
+    print("\nTotal Weight:", total_weight)
+    print("Total Profit:", total_profit)
+```
+
+## Sample Output 
+
+<img width="511" height="431" alt="image" src="https://github.com/user-attachments/assets/aa968b83-c0dd-476f-81e9-bf591f74079b" />
 
 [Back to Index](#index)
