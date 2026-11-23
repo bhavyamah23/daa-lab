@@ -180,6 +180,11 @@ Lakshmangarh, Rajasthan
     <td>Kruskal’s Algorithm</td>
     <td><a href="#program-27-Kruskal’s-Algorithm">Program 27</a></td>
   </tr>
+  <tr>
+    <td>28</td>
+    <td>BFS DFS</td>
+    <td><a href="#program-28-BFS-DFS">Program 28</a></td>
+  </tr>
 </table>
 
 
@@ -1854,5 +1859,102 @@ print("Total Cost =", cost)
 ## Sample Output 
 
 <img width="365" height="133" alt="image" src="https://github.com/user-attachments/assets/be97056a-7e0c-43f6-bcf9-609fa0f4fb94" />
+
+[Back to Index](#index)
+
+# program 28: BFS DFS
+
+## Aim
+
+To implement Breadth First Search (BFS) and Depth First Search (DFS) traversal algorithms using a graph and traverse all the vertices starting from a given source node.
+
+## Program
+
+```python
+from collections import deque
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+
+class Graph:
+    def __init__(self):
+        self.nodes = []
+
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+
+    def add_edge(self, u, v):
+        u.neighbors.append(v)
+        v.neighbors.append(u)
+
+    # Print Graph
+    def print_graph(self):
+        for node in self.nodes:
+            print(node.data, "->", [n.data for n in node.neighbors])
+
+    # BFS
+    def BFS(self, start):
+        visited = set()
+        queue = deque([start])
+        visited.add(start)
+
+        while queue:
+            node = queue.popleft()
+            print(node.data, end=" ")
+
+            for neighbor in node.neighbors:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    queue.append(neighbor)
+
+    # DFS
+    def DFS(self, start, visited=None):
+        if visited is None:
+            visited = set()
+
+        visited.add(start)
+        print(start.data, end=" ")
+
+        for neighbor in start.neighbors:
+            if neighbor not in visited:
+                self.DFS(neighbor, visited)
+
+
+# Graph Creation
+graph = Graph()
+
+A = graph.add_node("A")
+B = graph.add_node("B")
+C = graph.add_node("C")
+D = graph.add_node("D")
+E = graph.add_node("E")
+
+# Add Edges
+graph.add_edge(A, B)
+graph.add_edge(A, C)
+graph.add_edge(B, D)
+graph.add_edge(C, D)
+graph.add_edge(D, E)
+
+# Print Graph
+print("Graph:")
+graph.print_graph()
+
+# BFS
+print("\nBFS:")
+graph.BFS(A)
+
+# DFS
+print("\n\nDFS:")
+graph.DFS(A)
+```
+
+## Sample Output 
+
+<img width="325" height="341" alt="image" src="https://github.com/user-attachments/assets/b8411acf-1a4f-49dc-8f08-3afebc1cc56c" />
 
 [Back to Index](#index)
