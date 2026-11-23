@@ -160,6 +160,11 @@ Lakshmangarh, Rajasthan
     <td>Fractional Knapsack</td>
     <td><a href="#program-23-Fractional-Knapsack">Program 23</a></td>
   </tr>
+   <tr>
+    <td>24</td>
+    <td>Dijkstra Algorithm</td>
+    <td><a href="#program-24-Dijkstra-Algorithm">Program 24</a></td>
+   </tr>
 </table>
 
 
@@ -1478,5 +1483,80 @@ fractional_knapsack(weights, profits, capacity)
 ## Sample Output 
 
 <img width="839" height="429" alt="image" src="https://github.com/user-attachments/assets/17491621-636a-4ce1-881e-896c2d7141dd" />
+
+[Back to Index](#index)
+
+# program 24: Dijkstra Algorithm
+
+## Aim
+
+To implement Dijkstra’s Algorithm using a Graph class and find the shortest distance from a source vertex to all other vertices in a weighted graph.
+
+## Program
+
+```python
+def dijkstra(graph, start):
+    distances = {node: float('inf') for node in graph}
+    distances[start] = 0
+    visited = set()
+
+    while len(visited) < len(graph):
+        current = min(
+            (node for node in graph if node not in visited),
+            key=lambda node: distances[node]
+        )
+
+        if distances[current] == float('inf'):
+            break
+
+        visited.add(current)
+
+        for neighbor, weight in graph[current]:
+            new_distance = distances[current] + weight
+
+            if new_distance < distances[neighbor]:
+                distances[neighbor] = new_distance
+
+    return distances
+
+
+class Graph:
+    def __init__(self):
+        self.graph = {}
+
+    def add_node(self, node):
+        self.graph[node] = []
+
+    def add_edge(self, u, v, weight):
+        self.graph[u].append((v, weight))
+
+
+g = Graph()
+
+g.add_node("A")
+g.add_node("B")
+g.add_node("C")
+g.add_node("D")
+
+A = "A"
+B = "B"
+C = "C"
+D = "D"
+
+g.add_edge(A, B, 4)
+g.add_edge(A, C, 2)
+g.add_edge(C, B, 1)
+g.add_edge(B, D, 3)
+g.add_edge(C, D, 5)
+
+distance = dijkstra(g.graph, A)
+
+for node, dist in distance.items():
+    print(node, "=", dist)
+```
+
+## Sample Output 
+
+<img width="101" height="115" alt="image" src="https://github.com/user-attachments/assets/470969d6-6cb9-456a-be85-24d1ff9838c7" />
 
 [Back to Index](#index)
