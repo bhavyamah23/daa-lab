@@ -170,6 +170,11 @@ Lakshmangarh, Rajasthan
     <td>BellmanFord Algorithm</td>
     <td><a href="#program-25-BellmanFord-Algorithm">Program 25</a></td>
   </tr>
+  <tr>
+    <td>26</td>
+    <td>Prim’s Algorithm</td>
+    <td><a href="#program-26-Prim’s-Algorithm">Program 26</a></td>
+  </tr>
 </table>
 
 
@@ -1639,5 +1644,98 @@ for node, dist in distance.items():
 ## Sample Output 
 
 <img width="446" height="277" alt="image" src="https://github.com/user-attachments/assets/a7bfc4d1-4552-4839-9dd6-f3cc1f193c71" />
+
+[Back to Index](#index)
+
+# program 26: Prim’s Algorithm
+
+## Aim
+
+To implement Prim’s Algorithm using a graph and find the Minimum Spanning Tree (MST) with minimum total cost.
+
+## Program
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+
+
+class Graph:
+    def __init__(self):
+        self.nodes = []
+
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+
+    def add_edge(self, u, v, weight):
+        u.neighbors.append((v, weight))
+        v.neighbors.append((u, weight))
+
+    # =================================================
+    # PRIM'S ALGORITHM
+    # =================================================
+    def prim(self, source):
+        visited = set()
+        visited.add(source)
+
+        mst = []
+        total_cost = 0
+
+        while len(visited) < len(self.nodes):
+            min_weight = float('inf')
+            selected_edge = None
+
+            # Check all edges from visited nodes
+            for node in visited:
+                for neighbor, weight in node.neighbors:
+                    if neighbor not in visited:
+                        if weight < min_weight:
+                            min_weight = weight
+                            selected_edge = (node, neighbor, weight)
+
+            if selected_edge is None:
+                break
+
+            node1, node2, weight = selected_edge
+
+            mst.append((node1, node2, weight))
+            total_cost += weight
+            visited.add(node2)
+
+        return mst, total_cost
+
+
+# Graph Creation
+g = Graph()
+
+A = g.add_node("A")
+B = g.add_node("B")
+C = g.add_node("C")
+D = g.add_node("D")
+
+g.add_edge(A, B, 4)
+g.add_edge(A, C, 2)
+g.add_edge(B, C, 1)
+g.add_edge(B, D, 3)
+g.add_edge(C, D, 5)
+
+# Call Prim's Algorithm
+mst, cost = g.prim(A)
+
+print("Minimum Spanning Tree:")
+
+for node1, node2, weight in mst:
+    print(node1.data, "-", node2.data, ":", weight)
+
+print("Total Cost =", cost)
+```
+
+## Sample Output 
+
+<img width="389" height="131" alt="image" src="https://github.com/user-attachments/assets/6f31ec46-63c2-42d3-946c-f22df67a2317" />
 
 [Back to Index](#index)
