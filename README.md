@@ -160,11 +160,16 @@ Lakshmangarh, Rajasthan
     <td>Fractional Knapsack</td>
     <td><a href="#program-23-Fractional-Knapsack">Program 23</a></td>
   </tr>
-   <tr>
+  <tr>
     <td>24</td>
     <td>Dijkstra Algorithm</td>
     <td><a href="#program-24-Dijkstra-Algorithm">Program 24</a></td>
-   </tr>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td>BellmanFord Algorithm</td>
+    <td><a href="#program-25-BellmanFord-Algorithm">Program 25</a></td>
+  </tr>
 </table>
 
 
@@ -1558,5 +1563,81 @@ for node, dist in distance.items():
 ## Sample Output 
 
 <img width="101" height="115" alt="image" src="https://github.com/user-attachments/assets/470969d6-6cb9-456a-be85-24d1ff9838c7" />
+
+[Back to Index](#index)
+
+# program 25: BellmanFord Algorithm
+
+## Aim
+
+To implement BellmanFord Algorithm using a graph and find the shortest distances from a given source vertex to all other vertices in a weighted graph.
+
+## Program
+
+```python
+class Graph:
+    def __init__(self):
+        self.graph = {}
+
+    def add_node(self, node):
+        self.graph[node] = []
+
+    def add_edge(self, u, v, weight):
+        self.graph[u].append((v, weight))
+
+    def print_graph(self):
+        for node in self.graph:
+            print(node, "->", self.graph[node])
+
+    def bellman_ford(self, start):
+        distance = {node: float('inf') for node in self.graph}
+        distance[start] = 0
+
+        for _ in range(len(self.graph) - 1):
+            for node in self.graph:
+                for neighbor, weight in self.graph[node]:
+                    if distance[node] != float('inf'):
+                        new_distance = distance[node] + weight
+
+                        if new_distance < distance[neighbor]:
+                            distance[neighbor] = new_distance
+
+        return distance
+
+
+# Graph Creation
+g = Graph()
+
+g.add_node("A")
+g.add_node("B")
+g.add_node("C")
+g.add_node("D")
+
+A = "A"
+B = "B"
+C = "C"
+D = "D"
+
+g.add_edge(A, B, 4)
+g.add_edge(A, C, 2)
+g.add_edge(B, C, -3)
+g.add_edge(C, D, 5)
+g.add_edge(B, D, 4)
+
+# Print Graph
+g.print_graph()
+
+# Call Bellman-Ford and Print Distances
+distance = g.bellman_ford(A)
+
+print("\nShortest distances from A:")
+
+for node, dist in distance.items():
+    print(node, "=", dist)
+```
+
+## Sample Output 
+
+<img width="446" height="277" alt="image" src="https://github.com/user-attachments/assets/a7bfc4d1-4552-4839-9dd6-f3cc1f193c71" />
 
 [Back to Index](#index)
