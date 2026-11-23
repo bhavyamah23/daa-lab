@@ -175,6 +175,11 @@ Lakshmangarh, Rajasthan
     <td>Prim’s Algorithm</td>
     <td><a href="#program-26-Prim’s-Algorithm">Program 26</a></td>
   </tr>
+  <tr>
+    <td>27</td>
+    <td>Kruskal’s Algorithm</td>
+    <td><a href="#program-27-Kruskal’s-Algorithm">Program 27</a></td>
+  </tr>
 </table>
 
 
@@ -1737,5 +1742,117 @@ print("Total Cost =", cost)
 ## Sample Output 
 
 <img width="389" height="131" alt="image" src="https://github.com/user-attachments/assets/6f31ec46-63c2-42d3-946c-f22df67a2317" />
+
+[Back to Index](#index)
+
+# program 27: Kruskal’s Algorithm
+
+## Aim
+
+To implement Kruskal’s Algorithm using a graph and find the Minimum Spanning Tree (MST) with minimum total cost.
+
+## Program
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.neighbors = []
+
+
+class Graph:
+    def __init__(self):
+        self.nodes = []
+
+    def add_node(self, data):
+        node = Node(data)
+        self.nodes.append(node)
+        return node
+
+    def add_edge(self, u, v, weight):
+        u.neighbors.append((v, weight))
+        v.neighbors.append((u, weight))
+
+    # =================================================
+    # KRUSKAL'S ALGORITHM
+    # =================================================
+    def kruskal(self):
+        edges = []
+
+        # Collect all edges
+        for node in self.nodes:
+            for neighbor, weight in node.neighbors:
+                # Avoid duplicate edges
+                if self.nodes.index(node) < self.nodes.index(neighbor):
+                    edges.append((weight, node, neighbor))
+
+        # Sort edges by weight
+        edges.sort()
+
+        # Initially every node is its own parent
+        parent = {}
+        for node in self.nodes:
+            parent[node] = node
+
+        # Find root
+        def find(node):
+            if parent[node] != node:
+                parent[node] = find(parent[node])
+            return parent[node]
+
+        # Join two sets
+        def union(node1, node2):
+            root1 = find(node1)
+            root2 = find(node2)
+
+            if root1 != root2:
+                parent[root2] = root1
+                return True
+            return False
+
+        mst = []
+        total_cost = 0
+
+        # Select edges
+        for weight, node1, node2 in edges:
+            if union(node1, node2):
+                mst.append((node1, node2, weight))
+                total_cost += weight
+
+            # MST contains V-1 edges
+            if len(mst) == len(self.nodes) - 1:
+                break
+
+        return mst, total_cost
+
+
+# Graph Creation
+g = Graph()
+
+A = g.add_node("A")
+B = g.add_node("B")
+C = g.add_node("C")
+D = g.add_node("D")
+
+g.add_edge(A, B, 4)
+g.add_edge(A, C, 2)
+g.add_edge(B, C, 1)
+g.add_edge(B, D, 3)
+g.add_edge(C, D, 5)
+
+# Call Kruskal's Algorithm
+mst, cost = g.kruskal()
+
+print("Minimum Spanning Tree:")
+
+for node1, node2, weight in mst:
+    print(node1.data, "-", node2.data, ":", weight)
+
+print("Total Cost =", cost)
+```
+
+## Sample Output 
+
+<img width="365" height="133" alt="image" src="https://github.com/user-attachments/assets/be97056a-7e0c-43f6-bcf9-609fa0f4fb94" />
 
 [Back to Index](#index)
